@@ -1,0 +1,16 @@
+# File: Makefile
+
+# Default target builds README.md
+all: README.md
+
+README.md: guessinggame.sh
+	@echo "# Guessing Game" > README.md
+	@echo "" >> README.md
+	@echo "Generated: $$(date)" >> README.md
+	@echo "" >> README.md
+	@echo "Lines in guessinggame.sh: $$(wc -l < guessinggame.sh)" >> README.md
+
+.PHONY: all clean
+
+clean:
+	@rm -f README.md
